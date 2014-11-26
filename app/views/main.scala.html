@@ -7,9 +7,58 @@
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+        
+        <script src="@routes.Assets.at("javascripts/component/jquery/dist/jquery.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/component/jquery-ui/ui/jquery-ui.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/component/underscore/underscore-min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/component/backbone/backbone-min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/component/vie/dist/vie.js")" type="text/javascript"></script>
+
+        <!-- rdfQuery and annotate are only needed for the Hallo annotations plugin -->
+		<script src="@routes.Assets.at("javascripts/component/jquery-rdfquery/minimised/jquery.rdfquery.core.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("javascripts/component/jquery-rdfquery/minimised/jquery.rdfquery.rules.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("javascripts/component/annotate/annotate.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("javascripts/component/rangy/rangy-core.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("javascripts/component/hallo/dist/hallo.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("javascripts/component/create/dist/create.js")" type="text/javascript"></script>
+		<script>
+			$(document).ready(function () {
+
+				$(document.body).midgardCreate({
+					url: function () {
+						return 'javascript:false;';
+					}/*,
+			  		collectionWidgets: {
+			    		'default': 'midgardCollectionAdd',
+			    		'skos:related': null
+			  		},
+			  		stanbolUrl: 'http://dev.iks-project.eu:8081'
+			  		*/
+				});
+				/*
+				// Set a simpler editor for title fields
+				$('body').midgardCreate('configureEditor', 'title', 'halloWidget', {
+			  		plugins: {
+			    		halloformat: {},
+			    		halloblacklist: {
+			      			tags: ['br']
+			    		}
+			  		}
+				});
+				$('body').midgardCreate('setEditorForProperty', 'dcterms:title', 'title');
+				// Disable editing of author fields
+				$('body').midgardCreate('setEditorForProperty', 'dcterms:author', null);
+				*/
+			});
+			
+			// Fake Backbone.sync since there is no server to communicate with
+			Backbone.sync = function(method, model, options) {
+				console.log('Model contents', model.toJSONLD());
+				options.success(model);
+			};
+    </script>
     </head>
     <body>
-        @content
-    </body>
+    	<p>alalalal</p>
+  </body>
 </html>

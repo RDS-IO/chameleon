@@ -1,0 +1,30 @@
+{
+  "name": "vie",
+  "version": "2.1.2",
+  "main": "./dist/vie.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "lib",
+    "maven",
+    "utils"
+  ],
+  "dependencies": {
+    "jquery": ">=1.8.0",
+    "backbone": "1.0.0",
+    "underscore": ">=1.2.0",
+    "jquery-rdfquery": "1.0.0"
+  },
+  "homepage": "https://github.com/bergie/VIE",
+  "_release": "2.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.1.2",
+    "commit": "5f7619b90366c1f8f3dd7d638c327ddd94a46afb"
+  },
+  "_source": "git://github.com/bergie/VIE.git",
+  "_target": "2.1.x",
+  "_originalSource": "vie"
+}
